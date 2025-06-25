@@ -11,12 +11,11 @@
 
                     <div class="card">
                         @if (session('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                {{ session('success') }}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
 
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
                         @endif
                         <div class="card-header">
                             <h4>Admission Record Table</h4>
@@ -79,24 +78,24 @@
                                         <th>Action</th>
                                     </tr>
                                     @foreach ($admissions as $value)
-                                        <tr>
-                                            <td>{{ $loop->index + 1 }}</td>
-                                            <td>{{ $value->surname }}</td>
-                                            <td>{{ $value->othername }}</td>
-                                            <td><img class="img-fluid rounded-circle " style="height: 50px; width:50px;"
-                                                    src="{{ Storage::url($value->image) }}" alt=""
-                                                    srcset=""></td>
-                                            <td>{{ $value->email }}</td>
-                                            <td>
-                                                {{-- <a wire:navigate href="{{ url('admin/staff/edit/'.$value->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a> --}}
-                                                <a href="{{ url('admin/admission/view/' . $value->id) }}"
-                                                    class="btn btn-sm btn-warning"><i class="fa fa-eye"></i></a>
-                                                <a href="#" wire:click='delete({{ $value->id }})'
-                                                    data-bs-toggle="modal" data-bs-target="#deleteModal"
-                                                    class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></a>
+                                    <tr>
+                                        <td>{{ $loop->index + 1 }}</td>
+                                        <td>{{ $value->surname }}</td>
+                                        <td>{{ $value->othername }}</td>
+                                        <td><img class="img-fluid rounded-circle " style="height: 50px; width:50px;"
+                                                src="{{ Storage::url($value->image) }}" alt="" srcset=""></td>
+                                        <td>{{ $value->email }}</td>
+                                        <td>
+                                            {{-- <a wire:navigate href="{{ url('admin/staff/edit/'.$value->id) }}"
+                                                class="btn btn-sm btn-primary"><i class="fa fa-pen"></i></a> --}}
+                                            <a href="{{ url('admin/admission/view/' . $value->id) }}"
+                                                class="btn btn-sm btn-warning"><i class="fa fa-eye"></i></a>
+                                            <a href="#" wire:click='delete({{ $value->id }})' data-bs-toggle="modal"
+                                                data-bs-target="#deleteModal" class="btn btn-sm btn-danger"><i
+                                                    class="fa fa-trash"></i></a>
 
-                                            </td>
-                                        </tr>
+                                        </td>
+                                    </tr>
                                     @endforeach
                                 </table>
 
@@ -117,9 +116,9 @@
 </div>
 <!-- Main content stop -->
 @push('script')
-    <script>
-        window.addEventListener('close-modal', event => {
+<script>
+    window.addEventListener('close-modal', event => {
             $('#deleteModal').modal('hide');
         });
-    </script>
+</script>
 @endpush

@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class StudentMiddleware
@@ -15,6 +16,10 @@ class StudentMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(!Auth::guard('student')->check()){
+            return redirect()->route('student_login');
+            session()->flash('error', 'You did not have permission to this page');
+        }
         return $next($request);
     }
 }

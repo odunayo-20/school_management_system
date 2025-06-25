@@ -2,9 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\News;
 use App\Models\Admin;
+use App\Models\Event;
+use App\Models\Staff;
+use App\Models\Contact;
+use App\Models\Gallery;
+use App\Models\Student;
+use App\Models\Admission;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\ExternalFeesAdmin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -12,7 +20,26 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $staff = Staff::get();
+        $student = Student::get();
+        $admission = Admission::get();
+        $event = Event::get();
+        $news = News::get();
+        $gallery = Gallery::get();
+        $contact = Contact::get();
+        $schoolFeesAdmin = ExternalFeesAdmin::get();
+
+        $subscriptions= [
+            ['Day'=>'Donate Total', 'Value'=>count($staff)],
+            ['Day'=>'Contact', 'Value'=>count($student)],
+            ['Day'=>'Event', 'Value'=>count($event)],
+            ['Day'=>'Team', 'Value'=>count($news)],
+            ['Day'=>'Testimonial', 'Value'=>count($gallery)],
+            ['Day'=>'Testimonial', 'Value'=>count($contact)],
+                ];
+
+
+        return view('admin.index', compact(['subscriptions', 'staff', 'student', 'event', 'gallery', 'news', 'admission', 'contact', 'schoolFeesAdmin']));
     }
 
 

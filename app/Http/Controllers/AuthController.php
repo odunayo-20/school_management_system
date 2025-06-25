@@ -7,10 +7,27 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    // public function studentLogin()
+    // {
+    //     return view('');
+    // }
     public function studentLogin()
     {
-        return view('');
+        return view('student.auth.student-login');
     }
+
+    public function studentForget()
+    {
+        return view('student.auth.student-forget');
+    }
+    public function studentRegister()
+    {
+        return view('student.auth.student-register');
+    }
+
+
+
+
     public function staffLogin()
     {
         return view('staff.auth.staff-login');

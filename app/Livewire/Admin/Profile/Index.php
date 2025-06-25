@@ -56,7 +56,7 @@ class Index extends Component
 
         $file = $this->new_image;
         if (!is_null($this->new_image)) {
-            $file = $this->new_image->store('public/admin');
+            $file = $this->new_image->store('admin', 'public');
         }
 
 

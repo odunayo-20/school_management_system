@@ -26,7 +26,9 @@
     <link rel="stylesheet" href="{{ asset('assets/frontend/fontawesome/css/all.min.css') }}">
     <link rel="stylesheet"
         href="{{ asset('assets/frontend/bootstrap-icons-1.10.5/bootstrap-icons-1.10.5/font/bootstrap-icons.min.css') }}">
-
+        <link rel="stylesheet" href="{{ asset('assets/css/summernote-lite.css') }}">
+        {{-- <link rel="stylesheet" href="{{ asset('assets/bundles/summernote/summernote-bs4.css') }}"> --}}
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.18/summernote-bs4.min.css" rel="stylesheet">
 
 
 </head>
@@ -42,6 +44,7 @@
 
      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+     <script src="{{ asset('assets/js/summernote-lite.js') }}"></script>
 
     <script>
         setTimeout(function() {
@@ -49,6 +52,7 @@
         }, 3500);
     </script>
 
+@yield('scripts')
 </body>
 
 </html>

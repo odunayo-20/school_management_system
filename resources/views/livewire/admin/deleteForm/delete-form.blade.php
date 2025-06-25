@@ -1,5 +1,5 @@
  <!-- Modal -->
- <div wire:ignore.self class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel">
+ <div wire:ignore.self class="modal fade" style="z-index: 1060" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">

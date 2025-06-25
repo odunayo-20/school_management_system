@@ -120,8 +120,7 @@
             resize: none;
         }
     </style>
-    @stack('styles')
-    @livewireStyles
+    @yield('styles')
 </head>
 
 <body>
@@ -160,5 +159,13 @@
         $(".alert").alert('close');
     }, 3500);
 </script>
+<script>
+
+    window.addEventListener('close-modal', event => {
+        $('#createModal').modal('hide');
+        $('#editModal').modal('hide');
+        $('#deleteModal').modal('hide');
+    });
+    </script>
 
 </html>

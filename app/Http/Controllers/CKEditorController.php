@@ -12,7 +12,7 @@ class CKEditorController extends Controller
     {
         if ($request->hasFile('upload')) {
             $file = $request->file('upload');
-            $path = $file->store('public/uploads');
+            $path = $file->store('uploads','public');
 
             return response()->json([
                 'url' => Storage::url($path)

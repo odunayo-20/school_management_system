@@ -8,7 +8,7 @@
 
                 </a>
             </div>
-            {{-- <ul class="sidebar-menu">
+            <ul class="sidebar-menu">
                 <li class="menu-header">Main</li>
                 <li class="dropdown  @if (Request::segment(2) == 'dashboard') active @endif">
                     <a href="{{ route('staff_dashboard') }}" class="nav-link"><i
@@ -27,7 +27,7 @@
                     <a href="{{ route('staff_news') }}" class=" nav-link"><i
                             data-feather="briefcase"></i><span>News</span></a>
                 </li>
-            </ul> --}}
+            </ul>
         </aside>
     </div>
 </div>

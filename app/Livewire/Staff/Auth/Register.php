@@ -65,7 +65,7 @@ class Register extends Component
 
         // dd($validated);
         if ($this->image) {
-            $image = $this->image->store('public/staff');
+            $image = $this->image->store('staff', 'public');
         }
         $staff = Staff::updateOrCreate([
             'firstname' => $this->firstname,

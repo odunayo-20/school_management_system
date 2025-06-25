@@ -2,4 +2,5 @@
 
 @section('content')
 
+<livewire:admin.class.index>
 @endsection

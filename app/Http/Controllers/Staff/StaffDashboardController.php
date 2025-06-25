@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Staff;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class StaffDashboardController extends Controller
 {
@@ -19,5 +20,12 @@ class StaffDashboardController extends Controller
     public function change_password()
     {
         return view('staff.profile.change_password');
+    }
+
+
+    public function staff_logout()
+    {
+        Auth::guard('staff')->logout();
+        return redirect(route('staff_login'));
     }
 }

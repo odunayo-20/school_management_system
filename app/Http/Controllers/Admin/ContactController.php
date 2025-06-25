@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -11,8 +12,9 @@ class ContactController extends Controller
     {
         return view("admin.contact.index");
     }
-    public function veiw()
+    public function view($contact)
     {
-        return view("admin.contact.veiw");
+        $contact = Contact::findOrFail($contact);
+        return view("admin.contact.view", compact('contact'));
     }
 }

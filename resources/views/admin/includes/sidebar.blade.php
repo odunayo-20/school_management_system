@@ -2,8 +2,8 @@
     <div class="main-sidebar sidebar-style-2">
         <aside id="sidebar-wrapper">
           <div class="sidebar-brand">
-            <a href="{{ route('admin_dashboard') }}">
-                <img alt="image" src="{{ asset('assets/frontend/logo/logo.png') }}" class="header-logo" />
+            <a href="{{ route('admin_dashboard') }}" style="display:block; text-align: center;" >
+                <img alt="image" style="width: 50%; height: 20%;" src="{{ asset('assets/frontend/logo/logo.png') }}" class="header-logo" />
                 <span
                 class="logo-name">OgoOluwa</span>
             </a>
@@ -21,10 +21,14 @@
               <a href="{{ route('admin_subject')}}" class=" nav-link "><i
                   data-feather="briefcase"></i><span>Subject</span></a>
             </li>
-            {{-- <li class="dropdown @if(Request::segment(2) == 'assignSubject') active @endif">
+            <li class="dropdown @if(Request::segment(2) == 'assignSubject') active @endif">
               <a href="{{ route('admin_assign_subject')}}" class=" nav-link "><i
                   data-feather="briefcase"></i><span>Assign Subject</span></a>
-            </li> --}}
+            </li>
+            <li class="dropdown @if(Request::segment(2) == 'assignStaff') active @endif">
+              <a href="{{ route('admin_assign_staff')}}" class=" nav-link "><i
+                  data-feather="briefcase"></i><span>Assign Staff</span></a>
+            </li>
             <li class="dropdown @if(Request::segment(2) == 'event') active @endif">
               <a href="{{ route('admin_event')}}" class=" nav-link "><i
                   data-feather="briefcase"></i><span>Event</span></a>

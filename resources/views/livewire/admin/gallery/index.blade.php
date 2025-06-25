@@ -353,13 +353,13 @@
 </div>
 <!-- Main content stop -->
 
-@push('script')
-    <script>
-        window.addEventListener('close-modal', event => {
-            $('#deleteModal').modal('hide');
-        });
-    </script>
-@endpush
+@section('scripts')
+<script>
 
+    window.addEventListener('close-modal', event => {
+        $('#deleteModal').modal('hide');
+    });
+    </script>
+@endsection
 </div>
 

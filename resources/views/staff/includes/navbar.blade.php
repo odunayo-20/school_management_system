@@ -46,7 +46,12 @@
                   <a href="{{ route('staff_profile') }}" class="dropdown-item has-icon"> <i class="far fa-user"></i> Profile
                   </a>
                   <div class="dropdown-divider"></div>
-                  {{-- @livewire('staff.auth.StaffLogout') --}}
+                  <div>
+                    {{-- <a wire:click.prevent='logout'  class="dropdown-item has-icon text-danger" style="cursor: pointer">
+                         <i class="fas fa-sign-out-alt"></i>Logout</a> --}}
+                         <a href="{{ route('staff_logout') }}"  class="dropdown-item has-icon text-danger" style="cursor: pointer">
+                            <i class="fas fa-sign-out-alt"></i>Logout</a>
+                </div>
                 </div>
               </li>
             </ul>

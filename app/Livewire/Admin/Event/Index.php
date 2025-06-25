@@ -13,14 +13,15 @@ class Index extends Component
 
     use WithPagination;
 
-    #[Url(history:true)]
+    #[Url(history: true)]
     public $search = '';
     public $pagination = 10;
 
-public $eventsPublish = [];
-public $eventsDraft = [];
-public $event_id;
-    public function mount(){
+    public $eventsPublish = [];
+    public $eventsDraft = [];
+    public $event_id;
+    public function mount()
+    {
         $this->eventsPublish = Event::where('status', 'published')->get();
         $this->eventsDraft = Event::where('status', 'drafted')->get();
     }
@@ -35,15 +36,17 @@ public $event_id;
 
 
 
-    public function delete($event_id){
+    public function delete($event_id)
+    {
 
         $this->event_id = $event_id;
     }
 
-    public function destroy(){
+    public function destroy()
+    {
         $event =  Event::findOrFail($this->event_id);
         $event->delete();
-        if(Storage::disk('local')->exists($event->image)){
+        if (Storage::disk('local')->exists($event->image)) {
             Storage::delete($event->image);
             $event->delete();
         }
@@ -59,10 +62,8 @@ public $event_id;
             $events = Event::latest()->paginate($this->pagination);
         } else {
 
-            $events = Event::latest()->where('title', 'like', '%'.$this->search.'%')->paginate($this->pagination);
+            $events = Event::latest()->where('title', 'like', '%' . $this->search . '%')->paginate($this->pagination);
         }
         return view('livewire.admin.event.index', compact('events'));
     }
-
-
 }

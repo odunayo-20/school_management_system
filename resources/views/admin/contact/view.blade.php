@@ -43,7 +43,7 @@
   <b>Message:</b>
   <hr>
   <p>
-      {{ $contact->message }}
+      {!! $contact->message !!}
   </p>
   </div>
 
@@ -52,7 +52,6 @@
       {{ $contact->created_at }}
 
   </div>
-
   </div>
 
               </div>
