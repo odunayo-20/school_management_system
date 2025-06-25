@@ -7,7 +7,7 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <a wire:navigate href="{{ route('staff_assignment') }}" class="btn btn-primary my-3 mx-3" style="float: right;">Assignment</a>
+                    <a href="{{ route('staff_assignment') }}" class="btn btn-primary my-3 mx-3" style="float: right;">Assignment</a>
                 </div>
                 <div class="col-12">
 
